@@ -13,6 +13,7 @@
 
     let selectedCodeInput = null;
     let selectedBonusId = null;
+    let selectedFieldType = null;
 
     document.addEventListener('click', (event) => {
         if (
