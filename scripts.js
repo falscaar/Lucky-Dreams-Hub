@@ -1,42 +1,42 @@
 const SCRIPTS = [
   {
-    name: "CodeInputAutoadjust",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/CodeInputAutoadjust.user.js",
+    name: "Codes Autoadjuster",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/CodeInputAutoadjust.user.js",
     enabled: true
   },
   {
-    name: "Highlight-Allow-Duplicates-false",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/Highlight-Allow-Duplicates-false.user.js",
+    name: "Highlight "AllowDuplicates: false",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/Highlight-Allow-Duplicates-false.user.js",
     enabled: true
   },
   {
-    name: "Highlighted-Rows",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/Highlighted-Rows.user.js",
+    name: "HighlightedRows (Restricted Countries checking)",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/Highlighted-Rows.user.js",
     enabled: true
   },
   {
-    name: "Internal-ID-Constructor",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/Internal-ID-Constructor.user.js",
+    name: "Internal_ID Constructor",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/Internal-ID-Constructor.user.js",
     enabled: true
   },
   {
-    name: "RetInputAutofill",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/RetInputAutofill.user.js",
+    name: "Currency input auto-filler",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/RetInputAutofill.user.js",
     enabled: true
   },
   {
-    name: "Retention-DSL-Checker",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/Retention-DSL-Checker.user.js",
+    name: "DSL Validator (Ret)",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/Retention-DSL-Checker.user.js",
     enabled: true
   },
   {
-    name: "VIP Group Manual checker - TEST",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/VIP%20Group%20Manual%20checker%20-%20TEST.user.js",
-    enabled: true
+    name: "VIP Group Manual checker - (only for TEST)",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/VIP%20Group%20Manual%20checker%20-%20TEST.user.js",
+    enabled: false
   },
   {
-    name: "labels_highlighted",
-    url: "https://raw.githubusercontent.com/falscaar/Lucky-Dreams-Hub/main/labels_highlighted.user.js",
+    name: "Highlighted Labels section for Jira",
+    url: "https://github.com/falscaar/Lucky-Dreams-Hub/raw/refs/heads/main/labels_highlighted.user.js",
     enabled: true
   }
 ];
