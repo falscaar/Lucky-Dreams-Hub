@@ -1,7 +1,7 @@
 [
 { "file": "CodeInputAutoadjust.user.js", "name": "Code Adjuster (DSL)" },
 { "file": "Retention-DSL-Checker.user.js", "name": "Bonus Validator (DSL)" },
-{ "file": "Highlight-Allow-Duplicates-false.user.js", "name": "Highlight bonuses with restricted duplicates (DSL) },
+{ "file": "Highlight-Allow-Duplicates-false.user.js", "name": "Highlight bonuses with restricted duplicates (DSL)" },
 { "file": "labels_highlighted.user.js", "name": "Highlight missing labels in (Jira)" },
 { "file": "RetInputAutofill.user.js", "name": "Auto-fill currency inputs in DSL" },
 { "file": "Internal-ID-Constructor.user.js", "name": "Internal_ID Constructor (DSL)" },
