@@ -16,20 +16,26 @@
     let selectedBonusId = null;
     let selectedFieldType = null;
 
-    // Обработчик клика по input — для выбора бонуса и типа поля
     document.addEventListener('click', (event) => {
         if (event.target.tagName.toLowerCase() === 'input') {
             const fieldId = event.target.id;
-            const match = fieldId.match(/form_(.*?)_(max|min|amount)_value_([A-Z]+)/);
+            const match = fieldId.match(/form_(.*?)_(min|max|amount)_value_([A-Z]+)/);
             if (match) {
                 selectedBonusId = match[1];
                 selectedFieldType = match[2];
                 console.log(`RetInputAutofill: выбран бонус ID: ${selectedBonusId}, тип поля: ${selectedFieldType}`);
+            } else {
+                selectedBonusId = null;
+                selectedFieldType = null;
+                console.log(`RetInputAutofill: выбран неподходящий input, сброс выбора`);
             }
+        } else {
+            selectedBonusId = null;
+            selectedFieldType = null;
+            console.log(`RetInputAutofill: клик вне input, сброс выбора`);
         }
     });
 
-    // Обработчик клавиатуры для вызова autofill
     document.addEventListener("keydown", (event) => {
         if (
             (navigator.platform.includes("Mac") && event.metaKey && event.shiftKey && event.code === "KeyF") ||
@@ -43,6 +49,11 @@
     const matches = {};
 
     async function fillFields() {
+        if (!selectedBonusId || !selectedFieldType) {
+            console.log("RetInputAutofill: Нет выбранного подходящего поля для заполнения.");
+            return;
+        }
+
         try {
             const clipboardData = await navigator.clipboard.readText();
             console.log("RetInputAutofill: Буфер обмена:", clipboardData);
@@ -59,7 +70,6 @@
             const regex = /([\d.]+)\s+([A-Z]+)\s+\(DSL:\s*([\d.]+)\s+([A-Z]+)\)/g;
             let match;
 
-            // Очищаем matches перед новым заполнением
             Object.keys(matches).forEach(k => delete matches[k]);
 
             while ((match = regex.exec(data)) !== null) {
@@ -102,16 +112,14 @@
             let filledCount = 0;
 
             allowedCurrencies.forEach((currency) => {
-                if (selectedBonusId && selectedFieldType) {
-                    const inputFields = document.querySelectorAll(`input[id*="form_${selectedBonusId}_${selectedFieldType}_value_${currency}"]`);
-                    inputFields.forEach((inputField) => {
-                        if (inputField && matches[currency]) {
-                            inputField.value = matches[currency];
-                            inputField.dispatchEvent(new Event('input', { bubbles: true }));
-                            filledCount++;
-                        }
-                    });
-                }
+                const inputFields = document.querySelectorAll(`input[id*="form_${selectedBonusId}_${selectedFieldType}_value_${currency}"]`);
+                inputFields.forEach((inputField) => {
+                    if (inputField && matches[currency]) {
+                        inputField.value = matches[currency];
+                        inputField.dispatchEvent(new Event('input', { bubbles: true }));
+                        filledCount++;
+                    }
+                });
             });
 
             if (filledCount === 0) {
@@ -124,6 +132,6 @@
         }
     }
 
-    // Для LuckyHub этот модуль — функция без автоматического вызова fillFields,
-    // fillFields вызывается по сочетанию клавиш или через UI хаба, если надо.
+    window.retInputAutofillFillFields = fillFields;
+
 })();
