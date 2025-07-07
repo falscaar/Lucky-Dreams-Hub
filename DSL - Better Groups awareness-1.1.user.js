@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         DSL - Better Groups awareness
+// @name         DSL-BetterGroupsAwareness
 // @namespace    http://tampermonkey.net/
 // @version      1.1
 // @description  Groups input - better awareness
