@@ -7,5 +7,5 @@
 { "file": "Internal-ID-Constructor.user.js", "name": "Internal_ID Constructor (DSL)" },
 { "file": "Highlighted-Rows.user.js", "name": "Restricted countries management" },
 { "file": "VIP Group Manual checker - TEST.user.js", "name": "[TEST only] VIP - Group Manual checker" },
-{ "file": "TEST-SCRIPT.js", "name": "[TEST only]" },
+{ "file": "TEST-SCRIPT.user.js", "name": "TEST only" },
 ]	
